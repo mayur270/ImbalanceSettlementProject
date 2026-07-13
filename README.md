@@ -46,36 +46,38 @@ from Elexon Insights (BMRS) API regarding system imbalance price and previous se
 IndicativeImbalanceSettlement/
 │
 ├── src/
-│   └── apps/                                         # Applications Folder
-│       └── imbalance_settlement/                     # ELEXON DISEBSP APIs Folder 
-│           ├── configs/                              # Configurations per API
-│           │   └── settlement_system_prices/
-│           │       └── configuration.py
-│           ├── core/                                 # Business logic
-│           │   └── settlement_system_prices/
-│           │       ├── app.py
-│           │       ├── time_series.py
-│           │       └── visualisation.py
-│           ├── logs/                                 # .log files containing logging messages
-│           ├── tests/                                # Tests including Unit Test
-│           │   └── settlement_system_prices/
-│           │       ├── test_core/
-│           │       └── test_utils/
-│           ├── utils/                                # Shared Resources e.g. Functions/ Classes
-│           │   ├── api.py
-│           │   ├── constants.py
-│           │   ├── exceptions.py
-│           │   ├── log.py
-│           │   ├── schema.py
-│           │   ├── util.py
-│           │   └── validate.py
-│           └── main.py                               # Entrypoint to application                              
+│   ├── apps/                                          # Applications Folder
+│   │    └── imbalance_settlement/                     # ELEXON DISEBSP APIs Folder 
+│   │        ├── configs/                              # Configurations per API
+│   │        │   └── settlement_system_prices/
+│   │        │       └── configuration.py              # Config file
+│   │        ├── core/                                 # Business logic
+│   │        │   └── settlement_system_prices/
+│   │        │       ├── app.py                        # Contains workflow process
+│   │        │       ├── time_series.py                # Contains metric calculation and HH time series df
+│   │        │       └── visualisation.py              # Visualisation charts
+│   │        ├── logs/                                 # .log files containing logging messages
+│   │        ├── tests/                                # Tests including Unit Test
+│   │        │   └── settlement_system_prices/
+│   │        │       ├── test_core/                    # Unit Tests for core folder
+│   │        │       └── test_utils/                   # Unit Tests for utils folder
+│   │        ├── utils/                                # Shared Resources e.g. Functions/ Classes
+│   │        │   ├── api.py                            # Generic api class file
+│   │        │   ├── constants.py                      # Constant values file
+│   │        │   ├── exceptions.py                     # Contains custom exceptions
+│   │        │   ├── log.py                            # Logger configuration
+│   │        │   ├── schema.py                         # Contains table structure
+│   │        │   ├── util.py                           # Other shared functions/ classes
+│   │        │   └── validate.py                       # Validates data
+│   │        └── main.py                               # Entrypoint to application    
+│   │ 
+│   └── price_tracker.py                               # Real Time Price Tracker                              
 │
-├── .gitignore                                        # Untracked folders/ files
-├── pyproject.toml                                    # Contains config for pytest-cov
-├── README.md                                         # Application instructions
-├── requirements.txt                                  # Prod Application Dependencies
-└── requirements-dev.txt                              # Dev Application Dependencies
+├── .gitignore                                         # Untracked folders/ files
+├── pyproject.toml                                     # Contains config for pytest-cov
+├── README.md                                          # Application instructions
+├── requirements.txt                                   # Prod Application Dependencies
+└── requirements-dev.txt                               # Dev Application Dependencies
 ```
 
 ## Key assumptions and trade-offs
