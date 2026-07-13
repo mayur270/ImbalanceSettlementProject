@@ -1,7 +1,7 @@
 # Technical Exercise
 
 ## Specification
-- Python Version: 3.12
+- Python Version: 3.12.6
 - IDE: PyCharm
 - OS: MacOS
 
@@ -143,12 +143,16 @@ source venv/bin/activate
 3. Install dependencies (for prod): ```pip install -r requirements.txt ```. Otherwise ```pip install -r requirements-dev.txt ``` for dev.
 4. Run the application via CLI: ```python -m src.apps.imbalance_settlement.main```
 
+Note: Results will display in CLI and images are saved in charts folder ```src/apps/imbalance_settlement/charts```
+
 ## Running Unit Tests
 This project uses pytest for testing.
 
 1. To run all tests: ```pytest```
 2. To run a specific test file e.g. 
 ```pytest src/apps/imbalance_settlement/tests/test_imbalance_settlement/test_utils/test_util.py```
+
+Note: To check test coverage run ```pytest --cov```. Please install requirements-dev.txt beforehand.
 
 ## Troubleshooting
 1. Use PYTHONPATH to set path to 'src' folder (if need be).
