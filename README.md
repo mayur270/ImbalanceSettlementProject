@@ -132,17 +132,19 @@ it shows us how much price responds per MWh of imbalance. Some of the anomalies 
 
 ## Running the Application
 1. Clone the repository ```git clone <repository>``` into a folder.
-2. Create a virtual environment
+2. Create a virtual environment. Please see troubleshooting section (point 2) if you get an error.
 ```
 WINDOWS
-python -m venv venv
+python3.12 -m venv venv
 venv\Scripts\activate
 
 MACOS
 python3 -m venv venv
 source venv/bin/activate
 ```
-3. Install dependencies (for prod): ```pip install -r requirements.txt ```. Otherwise ```pip install -r requirements-dev.txt ``` for dev.
+3. Install dependencies (for prod): ```pip install -r requirements.txt ```. 
+Otherwise ```pip install -r requirements-dev.txt ``` for dev.
+If this command causes an issue, then please try this command: ```python -m pip install -r requirements.txt```.
 4. Run the application via CLI: ```python -m src.apps.imbalance_settlement.main```
 
 Note: Results will display in CLI and images are saved in charts folder ```src/apps/imbalance_settlement/charts```
@@ -150,11 +152,15 @@ Note: Results will display in CLI and images are saved in charts folder ```src/a
 ## Running Unit Tests
 This project uses pytest for testing.
 
-1. To run all tests: ```pytest```
+1. To run all tests: ```pytest``` or ```python -m pytest```
 2. To run a specific test file e.g. 
 ```pytest src/apps/imbalance_settlement/tests/test_imbalance_settlement/test_utils/test_util.py```
 
-Note: To check test coverage run ```pytest --cov```. Please install requirements-dev.txt beforehand.
+Note: To check test coverage run ```pytest --cov``` or ```python -m pytest --cov```. Please install requirements-dev.txt beforehand.
 
 ## Troubleshooting
 1. Use PYTHONPATH to set path to 'src' folder (if need be).
+2. python3.12: command not found -> If you happen to get this error, it is because you do not have Python3.12 installed
+on your machine. You'll be able to install from Python.org website.
+3. When trying to install requirements.txt, if you see this error "Program 'pip.exe' failed to run: Access is denied...". 
+Then try this command 'Python -m pip install -r requirements.txt'
