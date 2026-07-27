@@ -48,9 +48,8 @@ inserting, and deleting elements in a sorted sequence. Without a tail pointer, r
 require traversing the upper levels of the skip list, resulting in an average time complexity of O(log n).
 
 Adding a tail pointer reduces the time needed to access the maximum value, but it introduces additional memory 
-overhead. Despite this extra cost, skip lists have the advantage of supporting efficient concurrent access, 
-making them useful in applications where multiple processes or threads need to interact with the data structure
-simultaneously.
+overhead. In addition to this, since a skip list provides probabilistic rather than deterministic performance 
+guarantees, high-performance trading applications may prefer data structures with stronger worst-case guarantees.
 
 | Operation |                            Skip list |
 | --------- |-------------------------------------:|
