@@ -84,19 +84,19 @@ performance despite strong theoretical efficiency.
 
 ### 4. Segment Tree — Chosen
 
-Uses an iterative approach based on a divide-and-conquer strategy, allowing efficient range-based queries and making
-it well suited for storing and retrieving aggregate statistics across intervals. The array-based structure also 
-provides good cache locality, as data is stored contiguously in memory, improving practical performance. However,
-one drawback is the additional memory overhead required for storing the tree structure, resulting in O(2n) space 
-in the standard implementation, which simplifies to O(n).
+Built iteratively, allowing efficient range-based queries and making it well suited for storing and retrieving 
+aggregate statistics across intervals. The array-based structure also provides good cache locality, as data is 
+stored contiguously in memory, improving practical performance. However, one drawback is the additional memory 
+overhead required for storing the tree structure, resulting in O(2n) space in the standard implementation, which
+simplifies to O(n).
 
 | Operation | Segment Tree |
-|---------|-------------:|
-| Get min |         O(1) |
-| Get max |         O(1) |
-| Insert  |     O(log n) |
-| Delete  |     O(log n) |
-| Search  |     O(log n) |
+|-----------|-------------:|
+| Get min   |         O(1) |
+| Get max   |         O(1) |
+| Insert    | rebuild O(n) |
+| Delete    | rebuild O(n) |
+| Update    |     O(log n) |
 
 - Space complexity: O(n)
 
