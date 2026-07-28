@@ -11,7 +11,8 @@
 Initially, when approaching this problem, the first step was to identify which algorithms could potentially satisfy 
 the requirements and efficiently support the operations. I considered whether a single algorithm would be sufficient
 to meet these requirements or whether a combination of two or more algorithms would be necessary to achieve an 
-effective solution.
+effective solution. Some of the factors considered are time/ space complexity, cache locality, predictability and
+implementation.
 
 - **Point update** — a price changes for one period
 - **Point query** — read the price for one period
