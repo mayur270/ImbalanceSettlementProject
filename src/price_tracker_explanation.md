@@ -107,6 +107,7 @@ in the standard implementation, which simplifies to O(n).
 
 
 Segment tree, I believe perhaps might be a better algorithm to implement for this task: it meets all four requirements 
-with logarithmic bounds and is materially simpler to implement correctly than a red-black tree, given a fixed set of
-periods and the constraint to build everything from lists and loops. However, both red-black tree and segment tree 
-solve different problems so it depends on what future implementation is required
+with logarithmic bounds, has good cache locality as well as simpler to implement than a red-black tree, 
+given a fixed set of periods and the constraint to build everything from lists and loops. Red-black tree can answer 
+all the questions above efficiently in addition to keeping the data in order. Assuming if future implementations did 
+not require getting range queries information, I would select Red-black tree.
