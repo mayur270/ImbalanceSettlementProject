@@ -104,15 +104,15 @@ class PriceTracker:
         return period, self._prices[min_index]
 
     def _update_path_to_root(self, index: int):
-        r"""This function creates parents from child nodes. e.g. it starts at the leaf
+        r"""This function updates parents from child nodes. e.g. it starts at the leaf
         nodes and works upwards. For max tree if the prices were [1, 2, 3, 4], then
         global max would be 4. 4 should be at the root as shown below.
 
-              4
-             / \
-           2    4
-          / \  / \
-         1  2 3   4
+             4          # max of [1,2,3,4]
+           /   \
+          2     4       # max of [1,2], max of [3,4]
+         / \   / \
+        1   2 3   4     # leaf values
 
         :param index: index value
         """
